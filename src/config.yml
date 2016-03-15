@@ -1,0 +1,15 @@
+deny-drops: false
+death:
+  enabled: true
+  delay: 5
+  enabled-worlds:
+    - world
+    - world_nether
+    - world_the_end
+drop:
+  enabled: true
+  delay: 5
+  enabled-worlds:
+    - world
+    - world_nether
+    - world_the_end

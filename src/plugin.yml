@@ -1,0 +1,15 @@
+main: com.therealspoljo.simplepvpdrops.Main
+name: SimplePvPDrops
+version: 1.2
+author: therealspoljo
+
+commands:
+  simplepvpdrops:
+    description: main command
+    usage: /<command> <reload(rl)>
+    aliases: [spvpd, spd]
+
+permissions:
+  simplepvpdrops.admin:
+    description: Allows you to use /simplepvpdrops
+    default: op
