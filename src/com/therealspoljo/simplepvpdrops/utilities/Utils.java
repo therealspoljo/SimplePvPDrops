@@ -2,7 +2,6 @@ package com.therealspoljo.simplepvpdrops.utilities;
 
 import java.util.List;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 
@@ -39,12 +38,10 @@ public class Utils {
 	    if (item_.length == 2 && item_[0].equalsIgnoreCase(itemStack.getType().name())) {
 
 		if (item_[1].equalsIgnoreCase("all")) {
-		    Bukkit.broadcastMessage("all");
 		    return true;
 		} 
 
 		if (item_[1].equalsIgnoreCase(String.valueOf(itemStack.getDurability()))) {
-		    Bukkit.broadcastMessage("type correct");
 		    return true;
 		}
 
