@@ -1,4 +1,11 @@
-deny-drops: false
+deny-drops:
+  enabled: false
+  can-be-dropped:
+    - stone
+    - dirt
+    - grass
+    - 'log:all'
+    - 'wood:2'
 death:
   enabled: true
   delay: 5

@@ -12,18 +12,19 @@ import org.bukkit.scheduler.BukkitRunnable;
 import com.therealspoljo.simplepvpdrops.Main;
 import com.therealspoljo.simplepvpdrops.enums.Lang;
 import com.therealspoljo.simplepvpdrops.utilities.ConfigUtils;
+import com.therealspoljo.simplepvpdrops.utilities.Utils;
 
 public class PlayerDropItemListener implements Listener {
 
     @EventHandler
-    public void onPlayerDeath(final PlayerDropItemEvent event) {
+    public void onPlayerDropItem(final PlayerDropItemEvent event) {
 	if (event.isCancelled()) {
 	    return;
 	}
 
 	Player player = event.getPlayer();
 
-	if (ConfigUtils.shouldDenyDrops()) {
+	if (ConfigUtils.shouldDenyDrops() && !Utils.canBeDropped(event.getItemDrop().getItemStack())) {
 	    event.setCancelled(true);
 	    Lang.DENY_DROPS.send(player);
 	    return;

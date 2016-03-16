@@ -23,6 +23,7 @@ public class SimplePvPDrops implements CommandExecutor {
 	    case "rl":
 		Main.getInstance().getConfig().reload();
 		Main.getInstance().getLangConfig().reload();
+		Main.getInstance().reloadDroppableItems();
 		Lang.CONFIGS_RELOADED.send(sender);
 		return true;
 	    }

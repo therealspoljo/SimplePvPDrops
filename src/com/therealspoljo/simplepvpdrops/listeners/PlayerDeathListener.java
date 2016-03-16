@@ -32,12 +32,12 @@ public class PlayerDeathListener implements Listener {
 	}
 
 	long removeDelay = ConfigUtils.getDelay("death");
-	
+
 	for (int i = 0; i < event.getDrops().size(); i++) {
 	    ItemStack itemStack = event.getDrops().get(i);
 
 	    final Item item = player.getWorld().dropItemNaturally(player.getLocation(), itemStack);
-	    
+
 	    new BukkitRunnable() {
 		@Override
 		public void run() {
