@@ -36,10 +36,6 @@ public class Utils {
 	    }
 
 	    if (item_.length == 2 && item_[0].equalsIgnoreCase(itemStack.getType().name())) {
-		if (item_[1].equalsIgnoreCase("all")) {
-		    return true;
-		} 
-
 		if (item_[1].equalsIgnoreCase(String.valueOf(itemStack.getDurability()))) {
 		    return true;
 		}

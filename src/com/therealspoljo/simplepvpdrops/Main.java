@@ -63,7 +63,7 @@ public class Main extends JavaPlugin {
 	pluginManager.registerEvents(new PlayerDeathListener(), this);
 	pluginManager.registerEvents(new PlayerDropItemListener(), this);
     }
-    
+
     public void reloadDroppableItems() {
 	droppableItems = ConfigUtils.getDroppable();
     }

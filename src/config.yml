@@ -4,7 +4,6 @@ deny-drops:
     - stone
     - dirt
     - grass
-    - 'log:all'
     - 'wood:2'
 death:
   enabled: true
