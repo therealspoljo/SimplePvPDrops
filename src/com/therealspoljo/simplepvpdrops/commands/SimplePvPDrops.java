@@ -24,6 +24,7 @@ public class SimplePvPDrops implements CommandExecutor {
 		Main.getInstance().getConfig().reload();
 		Main.getInstance().getLangConfig().reload();
 		Main.getInstance().reloadDroppableItems();
+		Main.getInstance().reloadItemsToDelete();
 		Lang.CONFIGS_RELOADED.send(sender);
 		return true;
 	    }

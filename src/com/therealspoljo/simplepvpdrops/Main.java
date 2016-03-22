@@ -16,7 +16,7 @@ public class Main extends JavaPlugin {
 
     private static Main instance;
     private Config config, langConfig;
-    private List<String> droppableItems;
+    private List<String> droppableItems, itemsToDelete;
 
     @Override
     public void onEnable() {
@@ -26,6 +26,8 @@ public class Main extends JavaPlugin {
 	langConfig = Config.createConfig(this, "lang");
 
 	reloadDroppableItems();
+	reloadItemsToDelete();
+	
 	registerCommands();
 	registerListeners();
     }
@@ -38,6 +40,7 @@ public class Main extends JavaPlugin {
 	langConfig = null;
 
 	droppableItems = null;
+	itemsToDelete = null;
     }
 
     public static Main getInstance() {
@@ -68,7 +71,15 @@ public class Main extends JavaPlugin {
 	droppableItems = ConfigUtils.getDroppable();
     }
 
+    public void reloadItemsToDelete() {
+	itemsToDelete = ConfigUtils.getItemsToDeleteOnDeath();
+    }
+
     public List<String> getDroppableItems() {
 	return droppableItems;
+    }
+    
+    public List<String> getItemsToDelete() {
+	return itemsToDelete;
     }
 }

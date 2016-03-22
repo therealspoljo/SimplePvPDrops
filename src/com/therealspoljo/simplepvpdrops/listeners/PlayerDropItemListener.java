@@ -3,6 +3,7 @@ package com.therealspoljo.simplepvpdrops.listeners;
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -45,7 +46,9 @@ public class PlayerDropItemListener implements Listener {
 	new BukkitRunnable() {
 	    @Override
 	    public void run() {
-		if (event.getItemDrop().isDead()) {
+		Item item = event.getItemDrop();
+		
+		if (item == null || item.isDead()) {
 		    return;
 		}
 

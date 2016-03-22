@@ -1,5 +1,7 @@
 package com.therealspoljo.simplepvpdrops.listeners;
 
+import java.util.List;
+
 import org.bukkit.Effect;
 import org.bukkit.Sound;
 import org.bukkit.entity.Item;
@@ -32,9 +34,14 @@ public class PlayerDeathListener implements Listener {
 	}
 
 	long removeDelay = ConfigUtils.getDelay("death");
+	List<String> itemsToDelete = Main.getInstance().getItemsToDelete();
 
 	for (int i = 0; i < event.getDrops().size(); i++) {
 	    ItemStack itemStack = event.getDrops().get(i);
+
+	    if (itemsToDelete.contains(itemStack.getType().toString().toLowerCase())) {
+		continue;
+	    }
 
 	    final Item item = player.getWorld().dropItemNaturally(player.getLocation(), itemStack);
 

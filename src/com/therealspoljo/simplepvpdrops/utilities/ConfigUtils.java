@@ -14,6 +14,14 @@ public class ConfigUtils {
 	return Main.getInstance().getConfig().getStringList("deny-drops.can-be-dropped");
     }
 
+    public static boolean deleteSpecificItems() {
+	return Main.getInstance().getConfig().getBoolean("death.delete-specific-items.enabled", false);
+    }
+
+    public static List<String> getItemsToDeleteOnDeath() {
+	return Main.getInstance().getConfig().getStringList("death.delete-specific-items.items");
+    }
+
     public static boolean shouldRemoveOn(String type) {
 	return Main.getInstance().getConfig().getBoolean(type + ".enabled", false);
     }
